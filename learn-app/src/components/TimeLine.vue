@@ -9,7 +9,7 @@
             </a>
 
         </span>
-    <TimelineItem v-for="post of posts" :key="post.id" :post="post"/>
+        <TimelineItem v-for="post of posts" :key="post.id" :post="post" />
     </nav>
 </template>
 
@@ -17,8 +17,8 @@
 import { DateTime } from 'luxon'
 import { ref, computed } from 'vue'
 import { today, thisMonth, thisWeek, TimelinePost } from '../posts'
-import  TimelineItem  from '../components/TimeLineItem.vue';
-import {usePosts} from '../stores/posts'
+import TimelineItem from '../components/TimeLineItem.vue';
+import { usePosts } from '../stores/posts'
 // type Period = 'Today' | 'This week' | 'This month'
 const periods = ['Today', 'This week', 'This month'] as const
 type Period = typeof periods[number]
