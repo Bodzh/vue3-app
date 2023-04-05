@@ -1,6 +1,6 @@
 <template>
     <nav class="is-primary panel">
-      
+
         <span class="panel-tabs">
             <a v-for="(period, index) of periods" :key="index" @click="postsStore.setSelectedPeriod(period)"
                 :class="{ 'is-active': postsStore.selectedPeriod === period }">
@@ -18,6 +18,7 @@ import { usePosts } from '../stores/posts'
 import { periods } from '../constants';
 
 const postsStore = usePosts()
+await postsStore.fetchPosts()
 </script>
 
 <style></style>
